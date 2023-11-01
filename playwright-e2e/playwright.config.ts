@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 import { TestOptions } from "./src/electron-test";
+import { dirname } from "path";
+import path = require("path");
 
 /**
  * Read environment variables from file.
@@ -36,8 +38,9 @@ export default defineConfig<TestOptions>({
     {
       name: "electron",
       use: {
-        executablePath:
-          "F:\\devel\\cn\\electron-app\\dist\\win-unpacked\\electron-app.exe",
+        executablePath: path.resolve(
+          "../electron-app/dist/win-unpacked/electron-app.exe"
+        ),
       },
       testMatch: /.*.electron.spec.ts/,
     },

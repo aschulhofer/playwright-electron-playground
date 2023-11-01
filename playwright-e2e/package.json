@@ -8,11 +8,8 @@
     "test:ui": "playwright test --ui",
     "test:show-report": "playwright show-report"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.39.0",
-    "@types/node": "^20.8.10"
+    "@types/node": "^16.0.0"
   }
 }
