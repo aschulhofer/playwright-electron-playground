@@ -183,6 +183,14 @@ a:hover {
   margin-top: 6px;
 }
 
+form div label {
+  display: block;
+}
+
+form > div {
+  margin-bottom: 20px;
+}
+
 @media (max-width: 660px) {
   .features .feature-item {
     width: 50%;

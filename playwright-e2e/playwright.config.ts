@@ -37,12 +37,12 @@ export default defineConfig<TestOptions>({
     /* Configure projects for electron */
     {
       name: "electron",
+      testMatch: /.*.electron.spec.ts/,
       use: {
         executablePath: path.resolve(
           "../electron-app/dist/win-unpacked/electron-app.exe"
         ),
       },
-      testMatch: /.*.electron.spec.ts/,
     },
 
     /* Configure projects for major browsers */

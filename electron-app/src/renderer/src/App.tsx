@@ -1,5 +1,6 @@
 import Versions from './components/Versions'
 import icons from './assets/icons.svg'
+import { Link } from 'react-router-dom'
 
 function App(): JSX.Element {
   return (
@@ -29,7 +30,7 @@ function App(): JSX.Element {
             href="https://github.com/alex8088/electron-vite"
             rel="noopener noreferrer"
           >
-            Getting Help
+            <Link to="contact">Getting Help</Link>
           </a>
         </div>
         <div className="link-item link-dot">•</div>
