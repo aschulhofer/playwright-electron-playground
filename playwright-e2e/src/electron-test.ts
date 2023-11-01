@@ -23,21 +23,25 @@ export const test = base
   })
   .extend<TestFixture>({
     launchElectronApp: async ({}, use) => {
-      let electronApp;
+      const apps: ElectronApplication[] = [];
 
       await use(async (executablePath: string) => {
         console.log("Launch electron app", {
           executablePath,
         });
-        electronApp = await electron.launch({
+        process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
+        const electronApp = await electron.launch({
           executablePath,
         });
+
+        apps.push(electronApp);
+
         return electronApp;
       });
 
-      // if (electronApp) {
-      //   await electronApp.close();
-      // }
+      for (const app of apps) {
+        await app.close();
+      }
     },
 
     electronApp: async ({ launchElectronApp, executablePath }, use) => {
